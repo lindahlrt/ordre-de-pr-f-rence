@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root {
+
+    /* HSL COLOR */
+    --hue-color: 240;
+
+    --title-color: hsl(var(--hue-color), 50%, 45%);
+    --title-color-light: hsl(var(--hue-color), 50%, 65%);
+    --background-color: hsl(var(--hue-color), 30%, 90%);
+    --background-color-darker: hsl(var(--hue-color), 50%, 30%)
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-family: "lobster";
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 170px;
+    font-size: 70px;
+    line-height: 65px;
+    color: var(--title-color);
+}
+
+/* LIST */
+
+.sortable-list {
+    background: #fff;
+    width: 445px;
+    border-radius: 6px;
+    padding: 30px 25px 20px;
+}
+
+.sortable-list .item {
+    list-style: none;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid var(--background-color);
+    margin-bottom: 11px;
+    padding: 10px 13px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item .details {
+    display: flex;
+    align-items: center;
+}
+
+.item .details img {
+    width: 43px;
+    height: 43px;
+    margin-right: 12px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.item .details span {
+    font-size: 1.13rem;
+}
+
+.item i {
+    color: var(--title-color);
+    font-size: 1.13rem;
+}
+
+.item.dragging :where(.details, i) {
+    opacity: 0;
+}
